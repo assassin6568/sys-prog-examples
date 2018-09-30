@@ -72,6 +72,30 @@ int main(void)
 
 	// List the files in this directory so you can verify that we got
 	// out.
+	//
+	printf("\n\n\n");
+//COLORTERM=truecolor
+	printf("%s\n", *(environ+2));
+	printf("\n\n\n");
+	//
 	printf("listing of files in this directory\n");
-	execlp("ls", "/", NULL);
+	//
+	//execlp("cat", "cat", "/home/andre/foo.txt", NULL);
+	//execlp("ls", "ls", "/home/andre", NULL);
+	//execlp("ls", "ls", "/", 0);
+	//
+	//execl("/usr/bin/ls", "ls", "/home/andre", NULL);
+	//
+	//char *arr[] = {"ls","/home",NULL};
+	//execvp("ls", arr);
+	//
+        //HOME=/home/andre
+	//char *arr[] = {"ls","/home/andre",NULL};
+	//char *envarr[] = {"HOME=/home/andre",NULL}; /*set env vars for the ls command */
+	//execvpe("ls", arr, envarr);
+	//
+        //HOME=/home
+	char *envarr[] = {"HOME=/home","WHATEVER=yup",NULL}; /*set env... */
+	//execle("/usr/bin/ls", "ls","/home", NULL, envarr);
+	execle("/usr/bin/env", "env", NULL, envarr);
 }
