@@ -1,5 +1,5 @@
 // Scott Kuhl
-//
+//this comment added by Andre Oct5@10:24
 // This example uses clock_gettime() to demonstrate a robust way to
 // measure elapsed time which works even if the system administrator
 // changes the system clock.
